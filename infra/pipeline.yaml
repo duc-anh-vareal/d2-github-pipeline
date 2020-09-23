@@ -50,7 +50,6 @@ Resources:
   CodeBuild:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: deploy-test-build
       ServiceRole: !Ref CodeBuildServiceRole
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
@@ -125,7 +124,6 @@ Resources:
           MatchEquals: "refs/heads/master"
       TargetPipeline: !Ref Pipeline
       TargetAction: SourceAction
-      Name: GitHubPipelineWebhook
       TargetPipelineVersion: !GetAtt Pipeline.Version
       RegisterWithThirdParty: "true"
 
@@ -162,7 +160,6 @@ Resources:
     Type: AWS::CodePipeline::Pipeline
     Properties:
       RoleArn: !GetAtt CodePipelineServiceRole.Arn
-      Name: pipeline-test-build
       ArtifactStore:
         Type: S3
         Location: !Ref ArtifactBucket
