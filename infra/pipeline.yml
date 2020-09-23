@@ -65,7 +65,7 @@ Resources:
         Type: CODEPIPELINE
       Source:
         Type: CODEPIPELINE
-        BuildSpec: buildspec.yaml
+        BuildSpec: buildspec.yml
 
   CodePipelineServiceRole:
     Type: AWS::IAM::Role
@@ -210,7 +210,7 @@ Resources:
                 ChangeSetName: ChangeSet
                 RoleArn: !GetAtt CloudFormationRole.Arn
                 Capabilities: CAPABILITY_NAMED_IAM
-                TemplatePath: SourceCode::infra/api.yaml
+                TemplatePath: SourceCode::infra/api.yml
                 TemplateConfiguration: BuildOutput::config.json
               InputArtifacts:
                 - Name: SourceCode
