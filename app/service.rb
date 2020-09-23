@@ -18,7 +18,7 @@ class Book
 end
 
 get '/' do
-    'Healthy!!! z'
+    'Healthy!!!'
 end
 
 get '/stat' do
