@@ -16,8 +16,8 @@ open http://localhost:4567/api/books
 aws ecr create-repository --repository-name books-api
 aws ecr get-login --no-include-email | sh
 IMAGE_REPO=$(aws ecr describe-repositories --repository-names books-api --query 'repositories[0].repositoryUri' --output text)
-docker tag books-api:latest $IMAGE_REPO:v1
-docker push $IMAGE_REPO:v1
+docker tag books-api:latest $IMAGE_REPO:init
+docker push $IMAGE_REPO:init
 ```
 
 ### Create CloudFormation Stacks
