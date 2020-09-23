@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  Repository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: books-api
+
+Outputs:
+  Repository:
+    Description: Book Repo
+    Value: !Ref Repository
+    Export:
+      Name: BooksApiRepository
