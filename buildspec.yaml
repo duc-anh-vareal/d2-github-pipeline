@@ -9,10 +9,8 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      - DEFAULT=`pwd`
       - docker build --tag ${IMAGE_NAME} ./app/
       - docker push ${IMAGE_NAME}
-      - cd ${DEFAULT}
   post_build:
     commands:
       - echo Build completed on $(date)

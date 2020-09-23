@@ -210,7 +210,7 @@ Resources:
                 ChangeSetName: ChangeSet
                 RoleArn: !GetAtt CloudFormationRole.Arn
                 Capabilities: CAPABILITY_NAMED_IAM
-                TemplatePath: SourceCode::ecs-service.yaml
+                TemplatePath: SourceCode::infra/api.yaml
                 TemplateConfiguration: BuildOutput::config.json
               InputArtifacts:
                 - Name: SourceCode
