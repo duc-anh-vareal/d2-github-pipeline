@@ -26,12 +26,12 @@ Outputs:
 
   DatabaseInstanceAddess:
     Description: ECS Task Execution Role
-    Value: !GetAtt 'Endpoint.Address'
+    Value: !GetAtt 'DatabaseInstance.Endpoint.Address'
     Export:
       Name: 'DatabaseInstanceAddress'
 
   DatabaseInstancePort:
     Description: ECS Task Execution Role
-    Value: !GetAtt 'Endpoint.Port'
+    Value: !GetAtt 'DatabaseInstance.Endpoint.Port'
     Export:
       Name: 'DatabaseInstancePort'
