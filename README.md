@@ -26,11 +26,12 @@ docker push $IMAGE_REPO:init
 aws cloudformation create-stack --template-body file://$PWD/infra/vpc.yml --stack-name vpc
 aws cloudformation create-stack --template-body file://$PWD/infra/iam.yml --stack-name iam --capabilities CAPABILITY_IAM
 aws cloudformation create-stack --template-body file://$PWD/infra/app-cluster.yml --stack-name app-cluster
-aws cloudformation deploy --template infra/api.yml --stack-name api --parameter-overrides DockerImage=$IMAGE_REPO:v1 
+aws cloudformation deploy --template infra/api.yml --stack-name api --parameter-overrides DockerImage=$IMAGE_REPO:init
 aws cloudformation deploy --template infra/pipeline.yml --stack-name pipeline --parameter-overrides GitHubRepositoryName=d2-github-pipeline GitHubAccountName=duc-anh-vareal GitHubOAuthToken=XXXX --capabilities CAPABILITY_IAM
 ```
 
 ```
+aws cloudformation deploy --template infra/rds.yml --stack-name rds
 aws cloudformation deploy --template infra/secret-manager.yml --stack-name secret-manager --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
 aws cloudformation deploy --template infra/dynamo-db.yml --stack-name dynamo-db --capabilities CAPABILITY_IAM
 ```
