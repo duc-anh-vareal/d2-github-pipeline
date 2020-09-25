@@ -29,3 +29,7 @@ aws cloudformation create-stack --template-body file://$PWD/infra/app-cluster.ym
 aws cloudformation deploy --template infra/api.yml --stack-name api --parameter-overrides DockerImage=$IMAGE_REPO:v1 
 aws cloudformation deploy --template infra/pipeline.yml --stack-name pipeline --parameter-overrides GitHubRepositoryName=d2-github-pipeline GitHubAccountName=duc-anh-vareal GitHubOAuthToken=XXXX --capabilities CAPABILITY_IAM
 ```
+
+```
+aws cloudformation deploy --template infra/secret-manager.yml --stack-name secret-manager --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
+```

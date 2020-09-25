@@ -6,7 +6,7 @@ Parameters:
     Type: String
 
 Resources:
-  
+
   Task:
     Type: AWS::ECS::TaskDefinition
     Properties:
@@ -85,7 +85,6 @@ Resources:
       Actions:
         - TargetGroupArn: !Ref TargetGroup
           Type: forward
-
 
 Outputs:
 
