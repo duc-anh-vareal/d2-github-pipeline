@@ -32,4 +32,5 @@ aws cloudformation deploy --template infra/pipeline.yml --stack-name pipeline --
 
 ```
 aws cloudformation deploy --template infra/secret-manager.yml --stack-name secret-manager --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_IAM
+aws cloudformation deploy --template infra/dynamo-db.yml --stack-name dynamo-db --capabilities CAPABILITY_IAM
 ```
